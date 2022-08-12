@@ -78,7 +78,11 @@ WSGI_APPLICATION = 'NovoApi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': BASE_DIR / 'db.sqlite3', #volver a ver el video en donde ensñean las configuraciones
+        'HOST':'localhost',
+        'PORT':'3306',
+        'USER':'root'
+        'PASSWORD':'rootroot'
+        'NAME':'novoparts_prueba', #volver a ver el video en donde ensñean las configuraciones
     }
 }
 
