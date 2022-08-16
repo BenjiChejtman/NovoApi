@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'API',
+    #'API',
     'rest_framework',
+    'corsheaders',
+        'customers'
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'NovoApi.urls'
@@ -80,8 +84,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST':'localhost',
         'PORT':'3306',
-        'USER':'root'
-        'PASSWORD':'rootroot'
+        'USER':'root',
+        'PASSWORD':'rootroot',
         'NAME':'novoparts_prueba', #volver a ver el video en donde ensñean las configuraciones
     }
 }
@@ -135,3 +139,9 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORIGIN_WHITELIST = (
+       'localhost:3000',
+)
